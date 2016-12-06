@@ -1,4 +1,4 @@
-base:
+production:
   '*':
-     - config.wantedpackages
+     - common
 
