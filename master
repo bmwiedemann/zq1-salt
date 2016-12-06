@@ -17,7 +17,7 @@ gitfs_remotes:
   #- https://github.com/bmwiedemann/zq1-salt.git:
   - file:///home/bernhard/stuff/salt/zq1-salt:
     - root: srv/salt
-  - https://github.com/saltstack-formulas/ntp-formula.git
+  - https://gitlab.suse.de/salt-formulas/ntp-formula.git
 
 ext_pillar:
   - git:
