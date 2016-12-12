@@ -9,4 +9,4 @@ fileserver_backend:
 file_roots:
   base:
     - ./srv/salt
-
+    - formulas/ntp-formula/
