@@ -8,5 +8,5 @@ fileserver_backend:
 
 file_roots:
   base:
-  - ./srv/salt
+    - ./srv/salt
 
