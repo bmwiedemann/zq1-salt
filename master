@@ -1,4 +1,5 @@
 root_dir: .
+ssh_log_file: var/log/salt/ssh
 pillar_roots:
   base:
   - ./srv/pillar/

@@ -1,2 +1,26 @@
 adrilap: adrilap.zq1.de.
-black: black.zq1.de.
+black:   black.zq1.de.
+nuc:     nucw.zq1.de.
+salt:    salt
+vm11:    vm11
+vm12:    vm12
+vm13:    vm17a
+vm3:     vm3a
+openrd2:
+         host: openrd2
+         port: 23
+golf:
+         host: golf.zq1.de.
+         user: root
+         port: 23
+hotel:
+         host: hotel.zq1.de.
+         user: root
+         port: 23
+suse1:   suse
+mikrom3:
+         host: mikrom3.mikrom.com.
+         port: 23
+vm6f:
+         host: mikrom3.mikrom.com.
+         port: 24
