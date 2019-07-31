@@ -8,6 +8,7 @@ vm13:    vm17a
 vm3:     vm3a
 leap151:
   host: leap151.zq1.de.
+  port: 23
   minion_opts:
     grains:
       roles:
