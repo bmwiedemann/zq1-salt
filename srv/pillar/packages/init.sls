@@ -2,6 +2,8 @@ packages:
   - wanted:
     - screen
     - vim
+    - aaa_base-extras
+    - bash-completion
   - unwanted:
     - grub2-snapper-plugin
     - snapper
