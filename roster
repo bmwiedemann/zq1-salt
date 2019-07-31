@@ -6,6 +6,13 @@ vm11:    vm11
 vm12:    vm12
 vm13:    vm17a
 vm3:     vm3a
+leap151:
+  host: leap151.zq1.de.
+  minion_opts:
+    grains:
+      roles:
+        - vpnserver
+
 openrd2:
          host: openrd2
          port: 23
