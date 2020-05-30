@@ -1,3 +1,5 @@
+# WARNING: this file is managed by zq1-salt
+
 # TRANSPORT(5)                                                      TRANSPORT(5)
 # 
 # NAME
@@ -298,10 +300,6 @@
 # 
 #                                                                   TRANSPORT(5)
 
-# Rene
-#vm5a.zq1.de :[vm5a.zq1.de]
-#uml5a.zq1.de :[vm5a.zq1.de]
-
 # Rainer
 vm7a.zq1.de :[vm7c.zq1.de]
 uml7a.zq1.de :[vm7c.zq1.de]
@@ -313,20 +311,6 @@ tenhaaf.org :[vm7c.zq1.de]
 temair.de :[vm7c.zq1.de]
 phelan-net.de :[vm7c.zq1.de]
 
-# Mathias
-#majes.de :[uml8a.zq1.de]
-#.majes.de :[uml8a.zq1.de]
-#hennickendorf.de :[uml8d.zq1.de]
-#.hennickendorf.de :[uml8d.zq1.de]
-#hc.hennickendorf.de :[uml8d.zq1.de]
-#gmj.cjb.net :[uml8d.zq1.de]
-#kfv-handball-mol.de :[uml8d.zq1.de]
-#.kfv-handball-mol.de :[uml8d.zq1.de]
-
-# Thorsten Maus
-#vm4bg.zq1.de :[vm4b.zq1.de]
-#vm4b.zq1.de :[vm4b.zq1.de]
-
 # Bernhard
 aw.lsmod.de :[vm11a.zq1.de]
 silberwellensee.de :[vm12.zq1.de]
@@ -337,6 +321,5 @@ zq1.de :[vm12.zq1.de]
 lsmod.de :[vm12.zq1.de]
 svlaufamholz-tischtennis.de :[vm12.zq1.de]
 xn--bungsgeln-22a9w.de :[vm12.zq1.de]
-#astrowars-tools.com :[vm12.zq1.de]
-#.astrowars-tools.com :[vm12.zq1.de]
 
+# WARNING: this file is managed by zq1-salt

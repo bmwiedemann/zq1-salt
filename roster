@@ -8,6 +8,12 @@ vm11:    vm11.zq1.de.
 vm12:    vm12.zq1.de.
 vm13:    vm17a.zq1.de.
 vm3:     vm3a.zq1.de.
+vm4c:
+  host: vm4c.zq1.de.
+  minion_opts:
+    grains:
+      roles:
+        - mailserver
 leap151:
   host: leap151.zq1.de.
   port: 23

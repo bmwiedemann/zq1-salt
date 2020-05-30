@@ -1,3 +1,5 @@
+# WARNING: this file is managed by zq1-salt
+
 # HEADER_CHECKS(5)                                              HEADER_CHECKS(5)
 # 
 # NAME
@@ -549,3 +551,4 @@
 #                                                               HEADER_CHECKS(5)
 
 /X-Spam-Level: \*{9,}/ REJECT Looks like spam to me.
+# WARNING: this file is managed by zq1-salt
