@@ -1,6 +1,5 @@
 adrilap: adrilap.zq1.de.
 black:   black.zq1.de.
-vm5c:    vm5c.zq1.de.
 deskmini: deskmini.zq1.de.
 nuc:     nucw.zq1.de.
 salt:    salt.zq1.de.
@@ -14,6 +13,13 @@ vm4c:
     grains:
       roles:
         - mailserver
+vm5c:
+  host: vm5c.zq1.de.
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        - dnsserver
 leap151:
   host: leap151.zq1.de.
   port: 23
