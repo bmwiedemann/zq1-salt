@@ -41,13 +41,14 @@ header   BMW_TO_paypal ALL =~ /(paypal[24]?\@lsmod\.de)|(bernhardpgp\@lsmod\.de)
 describe BMW_TO_paypal Mail to outdated addr
 score    BMW_TO_paypal 3.0   
 
-header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|svltt-kontakt/ 
+header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|(githubbmw\@lsmod\.de)|svltt-kontakt/
 describe BMW_TO_spammed Mail to spammed addr
 score    BMW_TO_spammed 1.9  
 
 score BAYES_999 1.5
 
-score RCVD_IN_MSPIKE_BL (0.5)
+score RCVD_IN_RP_RNBL   (1.0)
+score RCVD_IN_MSPIKE_BL (1.5)
 score RCVD_IN_MSPIKE_L3 (0.5)
 score RCVD_IN_MSPIKE_L4 (0.6)
 score RCVD_IN_MSPIKE_L5 (0.7)
@@ -60,6 +61,7 @@ score SPF_HELO_FAIL 2.0 # up from 0.0
 score SPF_HELO_NONE 1.0 # up from 0.0
 
 score HTML_MESSAGE (0.6)
+score MIME_HTML_ONLY (0.5)
 score LOTS_OF_MONEY (1.1)
 score T_HK_NAME_FM_MR_MRS (1.0)
 score FREEMAIL_FROM (0.5)
