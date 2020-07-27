@@ -47,11 +47,12 @@ score    BMW_TO_spammed 1.9
 
 score BAYES_999 1.5
 
-score RCVD_IN_RP_RNBL   (1.0)
+score RCVD_IN_RP_RNBL   (1.1)
 score RCVD_IN_MSPIKE_BL (1.5)
 score RCVD_IN_MSPIKE_L3 (0.5)
 score RCVD_IN_MSPIKE_L4 (0.6)
 score RCVD_IN_MSPIKE_L5 (0.7)
+score URIBL_RED         (0.7)
 score RCVD_IN_SBL       (0.7)
 score URIBL_ABUSE_SURBL (0.5)
 score URIBL_BLACK       (0.5)
@@ -61,7 +62,8 @@ score SPF_HELO_FAIL 2.0 # up from 0.0
 score SPF_HELO_NONE 1.0 # up from 0.0
 
 score HTML_MESSAGE (0.6)
-score MIME_HTML_ONLY (0.5)
+score HTML_SHORT_LINK_IMG_1 (0.3)
+score MIME_HTML_ONLY (0.6)
 score LOTS_OF_MONEY (1.1)
 score T_HK_NAME_FM_MR_MRS (1.0)
 score FREEMAIL_FROM (0.5)
