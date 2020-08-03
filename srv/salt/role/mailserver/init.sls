@@ -7,6 +7,10 @@ mailserver-pkgs:
 /etc/mail/spamassassin/local.cf:
   file.managed:
     - source: salt://role/mailserver/files/local.cf
+  cmd.run:
+    - name: "/usr/bin/systemctl restart spampd"
+    - onchanges:
+      - file: /etc/mail/spamassassin/local.cf
 
 /etc/postfix/header_checks:
   file.managed:
