@@ -11,3 +11,4 @@ file_roots:
   base:
     - ./srv/salt
     - formulas/ntp-formula/
+    - formulas/nrpe-formula/
