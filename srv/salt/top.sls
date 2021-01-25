@@ -9,3 +9,5 @@ base:
     - match: grain
     - role.{{role}}
   {% endfor %}
+  'vm1*':
+     - wireguard
