@@ -3,6 +3,10 @@ black:   black.zq1.de.
 deskmini: deskmini.zq1.de.
 nuc:     nucw.zq1.de.
 salt:    salt.zq1.de.
+vm1a:    vm1a.zq1.de.
+vm1c:    vm1c.zq1.de.
+vm2a:    vm2a.zq1.de.
+vm2c:    vm2c.zq1.de.
 vm11:    vm11.zq1.de.
 vm12:    vm12.zq1.de.
 vm13:    vm17a.zq1.de.
@@ -20,13 +24,13 @@ vm5c:
     grains:
       roles:
         - dnsserver
-leap151:
-  host: leap151.zq1.de.
-  port: 23
-  minion_opts:
-    grains:
-      roles:
-        - vpnserver
+#leap151:
+#  host: leap151.zq1.de.
+#  port: 23
+#  minion_opts:
+#    grains:
+#      roles:
+#        - vpnserver
 
 openrd2:
          host: openrd2.zq1.de.
