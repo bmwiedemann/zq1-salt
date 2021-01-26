@@ -1,4 +1,12 @@
 #!jinja|yaml|gpg
+{% set ipv4net = '10.8.5.' %}
+{% set ipv6net = 'fd4b:ab24:3f04:8c::' %}
+{% load_yaml as wgclients %}
+    3:   qBbAx/y8wWcDVTQBejqLbkdhzelJAEQN8r6SlucvD1U= # deskmini.zq1.de
+    20:  ZUlfd2Cpf6KmIh0a650WtKpphezkfisYiwhKH0rlkDI= # adrian.zq1.de
+    150: dMBuQM5HRCSCXubmMt/l8HeoDeSQcXyvMaNYciUS8wY= # android1 Bernhard nokia
+    151: pzk7XxkEL5rt7Xm8dbeiX07kCQ7BBVFupWP8Q/wydww= # android2 Bernhard moto5
+{% endload %}
 
 wireguard:
   interfaces:
@@ -7,8 +15,8 @@ wireguard:
         ListenPort: 123
         {% if grains['id'] == 'vm1a' %}
         Address:
-          - 10.8.5.2/24
-          - fd4b:ab24:3f04:8c::2/64
+          - {{ipv4net}}2/24
+          - {{ipv6net}}2/64
         PrivateKey: |
           -----BEGIN PGP MESSAGE-----
 
@@ -41,8 +49,8 @@ wireguard:
           -----END PGP MESSAGE-----
         {% elif grains['id'] == 'vm1c' %}
         Address:
-          - 10.8.5.1/24
-          - fd4b:ab24:3f04:8c::1/64
+          - {{ipv4net}}1/24
+          - {{ipv6net}}1/64
         PrivateKey: |
           -----BEGIN PGP MESSAGE-----
 
@@ -92,25 +100,15 @@ wireguard:
           Endpoint: wireguard6.zq1.de.:123
           PresharedKey: g/GCZods3Uh0MDyeIb4vbQAHampUTJq4EgLrJ52zR1M=
           AllowedIPs:
-            - 10.8.5.1
+            - {{ipv4net}}1
             - 10.0.0.0/8
             - 192.168.236.0/24
             - fd4b:ab24:3f04::/48
         {% endif %}
-        # deskmini.zq1.de
-        - PublicKey: qBbAx/y8wWcDVTQBejqLbkdhzelJAEQN8r6SlucvD1U=
-          #PresharedKey: PRESHAREDKEY
-          AllowedIPs: 10.8.5.3, fd4b:ab24:3f04:8c::3
         # lenovo2.zq1.de
         - PublicKey: fWxDFQ7S37OO1ajB9arXlqEm2gVo1MgdpI5tsqUKZFU=
           Endpoint: lenovo26.zq1.de.:123
           AllowedIPs: 10.8.5.115, fd4b:ab24:3f04:8c::115
-        # android1 Bernhard nokia
-        - PublicKey: dMBuQM5HRCSCXubmMt/l8HeoDeSQcXyvMaNYciUS8wY=
-          AllowedIPs: 10.8.5.150, fd4b:ab24:3f04:8c::150
-        # android2 Bernhard moto5
-        - PublicKey: pzk7XxkEL5rt7Xm8dbeiX07kCQ7BBVFupWP8Q/wydww=
-          AllowedIPs: 10.8.5.151, fd4b:ab24:3f04:8c::151
         # bernhard.suse.de
         - PublicKey: bSjD+Lx4jYVsGHsMWXn8PKKNdHb4EIP1M/arqvKZBWk=
           AllowedIPs: 10.8.5.191, fd4b:ab24:3f04:8c::191, 10.160.4.191, 2620:113:80c0:8080:10:160:4:191
@@ -118,7 +116,7 @@ wireguard:
         - PublicKey: LO/zr4ZT55dq7vxBaBW+afoh776k8vDvBHvDkbNmHGc=
           AllowedIPs: 10.8.5.192, fd4b:ab24:3f04:8c::192, 10.162.191.176, 2620:113:80c0:8130:ec4:7aff:fe57:1808, 2620:113:80c0::/48, 10.8.5.190, fd4b:ab24:3f04:8c::190, 10.160.0.0/13, 10.100.0.0/13, 10.84.0.0/14, 10.67.0.0/16, 149.44.0.0/17, 149.44.128.0/17
           #Endpoint [2001:67c:2178:4000::1111]:33119
-        # adrian.zq1.de
-        - PublicKey: ZUlfd2Cpf6KmIh0a650WtKpphezkfisYiwhKH0rlkDI=
-          AllowedIPs: 10.8.5.20, fd4b:ab24:3f04:8c::20
-
+{% for wgclient in wgclients %}
+        - PublicKey: {{wgclients[wgclient]}}
+          AllowedIPs: {{ipv4net~wgclient}}, {{ipv6net~wgclient}}
+{% endfor %}
