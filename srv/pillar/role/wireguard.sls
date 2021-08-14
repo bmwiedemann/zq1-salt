@@ -5,6 +5,7 @@
     3:   qBbAx/y8wWcDVTQBejqLbkdhzelJAEQN8r6SlucvD1U= # deskmini.zq1.de
     20:  ZUlfd2Cpf6KmIh0a650WtKpphezkfisYiwhKH0rlkDI= # adrian.zq1.de
     32:  mSySF05fpMU1Rk0rfjVoq+xw4H4c97sKW7Y1nGEk3nc= # black.zq1.de
+    41:  c9rZUdkl+r6FNKtCX2i8W48zb9N+RtRSWI1+nzu5ahw= # nuc.zq1.de
     150: dMBuQM5HRCSCXubmMt/l8HeoDeSQcXyvMaNYciUS8wY= # android1 Bernhard nokia
     151: pzk7XxkEL5rt7Xm8dbeiX07kCQ7BBVFupWP8Q/wydww= # android2 Bernhard moto5
 {% endload %}
