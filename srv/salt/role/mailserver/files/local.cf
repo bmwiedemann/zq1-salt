@@ -37,7 +37,7 @@ bayes_auto_learn 1
 internal_networks 192.168. 10.8. 85.25.133.191 78.46.32.14 188.40.142. 188.40.172.113
 trusted_networks 192.168. 10.8. 85.25.133.191 78.46.32.14 213.165. 141.20. 216.34.181. 188.40.172. 188.40.142. 212.227.
 
-header   BMW_TO_paypal ALL =~ /(paypal[24]?\@lsmod\.de)|(bernhardpgp\@lsmod\.de)|(bemiwi0[67]0[357]\@lsmod\.de)|(googlebmw\@lsmod\.de)|(bernhard\@uml12d\.zq1\.de)|(s2rambmw\@lsmod\.de)|(moneybookers\@lsmod\.de)|(bemiwi7\@lsmod.de)|(bernhard\@mobilix\.zq1\.de)|(kernelbmw\@lsmod\.de)|(kickstarterbmw\@lsmod.de)|(corebootbmw\@lsmod\.de)|schattenfell0606/
+header   BMW_TO_paypal ALL =~ /(paypal[24]?\@lsmod\.de)|(bernhardpgp\@lsmod\.de)|(bemiwi0[67]0[357]\@lsmod\.de)|(googlebmw\@lsmod\.de)|(bernhard\@uml12d\.zq1\.de)|(s2rambmw\@lsmod\.de)|(moneybookers\@lsmod\.de)|(bemiwi7\@lsmod.de)|(bernhard\@mobilix\.zq1\.de)|(kernelbmw\@lsmod\.de)|(kickstarterbmw\@lsmod.de)|(corebootbmw\@lsmod\.de)|(opensuseapi\@lsmod\.de)|(paypal2017\@lsmod\.de)|(debianbmw1\@lsmod\.de)|schattenfell0606/
 describe BMW_TO_paypal Mail to outdated addr
 score    BMW_TO_paypal 3.0
 
@@ -60,13 +60,17 @@ score SPF_CHECK_PASS (-1.0)
 score SPF_HELO_FAIL 2.0 # up from 0.0
 score SPF_HELO_NONE 1.0 # up from 0.0
 
-score HTML_MESSAGE (0.6)
+score HTML_MESSAGE (0.8)
 score MIME_HTML_ONLY (0.5)
 score LOTS_OF_MONEY (1.1)
+score MONEY_FREEMAIL_REPTO (1.0)
 score T_HK_NAME_FM_MR_MRS (1.0)
 score FREEMAIL_FROM (0.5)
 score FREEMAIL_REPLYTO (0.5)
 score FREEMAIL_FORGED_REPLYTO (0.5)
 score FREEMAIL_REPLYTO_END_DIGIT (0.5)
+score HTML_SHORT_LINK_IMG_1 (1.0)
+score HTML_IMAGE_RATIO_02 (1.0)
+score T_TVD_MIME_EPI (0.5)
 
 score MAILING_LIST_MULTI 0.0 # up from -1.0

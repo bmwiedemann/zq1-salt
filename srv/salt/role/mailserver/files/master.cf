@@ -193,3 +193,4 @@ smtp      inet  n       -       n       -       -       smtpd
         -o mynetworks=127.0.0.0/8,192.168.0.0/16,10.0.0.0/24
         -o receive_override_options=no_unknown_recipient_checks
 # WARNING: this file is managed by zq1-salt
+postlog   unix-dgram n  -       n       -       1       postlogd
