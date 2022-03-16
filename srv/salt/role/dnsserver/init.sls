@@ -13,5 +13,5 @@ mailserver-pkgs:
 
 named:
   service.running:
-    name: named
-    enable: True
+    - name: named
+    - enable: True

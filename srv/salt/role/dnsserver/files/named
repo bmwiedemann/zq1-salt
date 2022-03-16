@@ -1,6 +1,5 @@
 ## Path: Network/DNS/Name Server
 ## Description: Names server settings
-
 ## Type: yesno
 ## Default: yes
 ## ServiceRestart: lwresd,named

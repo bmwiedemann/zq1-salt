@@ -6,8 +6,6 @@ nuc:     nucw.zq1.de.
 salt:    salt.zq1.de.
 vm1a:    vm1a.zq1.de.
 vm1c:    vm1c.zq1.de.
-vm2a:    vm2a.zq1.de.
-vm2c:    vm2c.zq1.de.
 vm11:    vm11.zq1.de.
 vm12:    vm12.zq1.de.
 vm13:    vm17a.zq1.de.
@@ -18,8 +16,15 @@ vm4c:
     grains:
       roles:
         - mailserver
-vm5c:
-  host: vm5c.zq1.de.
+vm2a:
+  host: vm2a.zq1.de.
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        - dnsserver
+vm2c:
+  host: vm2c.zq1.de.
   user: root
   minion_opts:
     grains:
