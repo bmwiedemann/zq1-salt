@@ -177,7 +177,6 @@ scache    unix  -       -       n       -       1       scache
 # service type  private unpriv  chroot  wakeup  maxproc command + args
 #               (yes)   (yes)   (yes)   (never) (100)
 # ==========================================================================
-smtp      inet  n       -       n       -       -       smtpd
 # this forwards to local spampd:
 smtp      inet  n       -       n       -       -       smtpd
         -o smtpd_proxy_filter=127.0.0.1:10025
