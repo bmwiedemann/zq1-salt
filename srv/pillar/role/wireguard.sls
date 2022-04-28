@@ -95,7 +95,7 @@ wireguard:
         - PublicKey: hg+x6QVYlNPCa91V9W0y9IzZ12TwSGOuTsWmmpK2cmk=
           Endpoint: wireguarda.zq1.de.:123
           PresharedKey: g/GCZods3Uh0MDyeIb4vbQAHampUTJq4EgLrJ52zR1M=
-          AllowedIPs: 10.8.5.0/24, 192.168.234.0/25, fd4b:ab24:3f04:2340::/61, fd4b:ab24:3f04::/49
+          AllowedIPs: 10.8.5.0/24, 192.168.234.0/25, fd4b:ab24:3f04:2340::/61, fd4b:ab24:3f04::/49, fec0:0:0:ffff::1/128
         {% elif grains['id'] == 'vm1a' %}
         # vm1c
         - PublicKey: BKmiKUGXwCNe3FMe52Dstyo2SkvD7vYXvC0TpUbAjX4=
@@ -116,7 +116,7 @@ wireguard:
           AllowedIPs: 10.8.5.191, fd4b:ab24:3f04:8c::191, 10.160.4.191, 2620:113:80c0:8080:10:160:4:191
         # bernhards.cloud.suse.de
         - PublicKey: LO/zr4ZT55dq7vxBaBW+afoh776k8vDvBHvDkbNmHGc=
-          AllowedIPs: 10.8.5.192, fd4b:ab24:3f04:8c::192, 10.162.191.176, 2620:113:80c0:8130:ec4:7aff:fe57:1808, 2620:113:80c0::/48, 10.8.5.190, fd4b:ab24:3f04:8c::190, 10.160.0.0/13, 10.100.0.0/13, 10.84.0.0/14, 10.67.0.0/16, 149.44.0.0/17, 149.44.128.0/17
+          AllowedIPs: 10.8.5.192, fd4b:ab24:3f04:8c::192, 10.162.191.176, 2620:113:80c0:8130:ec4:7aff:fe57:1808, 2620:113:80c0::/48, 10.8.5.190, fd4b:ab24:3f04:8c::190, 10.160.0.0/13, 10.100.0.0/13, 10.84.0.0/14, 10.67.0.0/16, 10.156.0.0/16, 149.44.0.0/17, 149.44.128.0/17
           #Endpoint [2001:67c:2178:4000::1111]:33119
 {% for wgclient in wgclients %}
         - PublicKey: {{wgclients[wgclient]}}
