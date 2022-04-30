@@ -14,8 +14,8 @@ wireguard:
   interfaces:
     wg0:
       config:
-        ListenPort: 123
         {% if grains['id'] == 'vm1a' %}
+        ListenPort: 51123
         Address:
           - {{ipv4net}}2/24
           - {{ipv6net}}2/64
@@ -50,6 +50,7 @@ wireguard:
           =ezeY
           -----END PGP MESSAGE-----
         {% elif grains['id'] == 'vm1c' %}
+        ListenPort: 123
         Address:
           - {{ipv4net}}1/24
           - {{ipv6net}}1/64
@@ -93,7 +94,7 @@ wireguard:
         {% if grains['id'] == 'vm1c' %}
         # vm1a
         - PublicKey: hg+x6QVYlNPCa91V9W0y9IzZ12TwSGOuTsWmmpK2cmk=
-          Endpoint: wireguarda.zq1.de.:123
+          Endpoint: wireguarda.zq1.de.:51123
           PresharedKey: g/GCZods3Uh0MDyeIb4vbQAHampUTJq4EgLrJ52zR1M=
           AllowedIPs: 10.8.5.0/24, 192.168.234.0/25, fd4b:ab24:3f04:2340::/61, fd4b:ab24:3f04::/49, fec0:0:0:ffff::1/128
         {% elif grains['id'] == 'vm1a' %}
