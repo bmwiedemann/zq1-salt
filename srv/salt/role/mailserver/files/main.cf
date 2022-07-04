@@ -710,10 +710,11 @@ inet_protocols = all
 masquerade_classes = envelope_sender, header_sender, header_recipient
 masquerade_domains = 
 masquerade_exceptions = root
-myhostname = juliet.zq1.de
+myhostname = mail.bmwiedemann.de
 mydestination = $myhostname, localhost.$mydomain
 mynetworks = 10.0.0.0/8 192.168.0.0/16 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
 mynetworks_style = host
+# must be empty, since we deliver
 relayhost = 
 
 alias_maps = lmdb:/etc/aliases
