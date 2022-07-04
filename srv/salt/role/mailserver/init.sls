@@ -3,6 +3,7 @@ mailserver-pkgs:
     - pkgs:
       - postfix
       - spamassassin
+      - opendkim
 
 /etc/mail/spamassassin/local.cf:
   file.managed:
@@ -11,6 +12,11 @@ mailserver-pkgs:
     - name: "/usr/bin/systemctl restart spampd"
     - onchanges:
       - file: /etc/mail/spamassassin/local.cf
+
+opendkim-service:
+  service.running:
+    - name: opendkim
+    - enable: True
 
 /etc/postfix/header_checks:
   file.managed:

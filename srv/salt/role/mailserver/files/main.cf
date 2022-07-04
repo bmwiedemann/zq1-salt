@@ -834,4 +834,8 @@ smtpd_relay_restrictions = permit_mynetworks, reject_unknown_recipient_domain, r
 myorigin = lsmod.de
 smtp_tls_security_level = may
 smtpd_tls_security_level = may
+milter_default_action = accept
+milter_protocol   = 6
+smtpd_milters     = inet:localhost:25001
+non_smtpd_milters = inet:localhost:25001
 # WARNING: this file is managed by zq1-salt
