@@ -11,3 +11,5 @@ base:
   {% endfor %}
   'vm1*':
      - wireguard
+  'vm*':
+     - config.tempaddr
