@@ -41,7 +41,7 @@ header   BMW_TO_paypal ALL =~ /(paypal[24]?\@lsmod\.de)|(bernhardpgp\@lsmod\.de)
 describe BMW_TO_paypal Mail to outdated addr
 score    BMW_TO_paypal 3.0
 
-header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|(githubbmw\@lsmod\.de)|(debianbugs\@zq1\.de)|(gnomebmw\@lsmod\.de)|svltt-kontakt/
+header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|(githubbmw\@lsmod\.de)|(pythonbugs\@zq1\.de)|(debianbugs\@zq1\.de)|(gnomebmw\@lsmod\.de)|svltt-kontakt/
 describe BMW_TO_spammed Mail to spammed addr
 score    BMW_TO_spammed 1.9
 
