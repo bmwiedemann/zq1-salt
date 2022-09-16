@@ -30,6 +30,19 @@ vm2c:
     grains:
       roles:
         - dnsserver
+vm15c:
+  host: vm15c.zq1.de.
+  minion_opts:
+    grains:
+      roles:
+        - varnish
+vm16c:
+  host: vm16c.zq1.de.
+  minion_opts:
+    grains:
+      roles:
+        - varnish
+
 #leap151:
 #  host: leap151.zq1.de.
 #  port: 23
