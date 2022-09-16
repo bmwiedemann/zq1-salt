@@ -9,7 +9,7 @@ base:
     - match: grain
     - role.{{role}}
   {% endfor %}
-  'vm1*':
+  'vm1?':
      - wireguard
   'vm*':
      - config.tempaddr
