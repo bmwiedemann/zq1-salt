@@ -19,7 +19,7 @@ varnish-service:
   service.running:
     - name: varnish
     - enable: True
-    - restart: True
+    - reload: True
     - watch:
       - file: /etc/varnish/vcl.conf
       - file: /etc/sysconfig/varnish
