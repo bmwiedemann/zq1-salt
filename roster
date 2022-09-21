@@ -36,12 +36,26 @@ vm15c:
     grains:
       roles:
         - varnish
+      varnish:
+        vcl: vcl.conf.kilo
 vm16c:
   host: vm16c.zq1.de.
   minion_opts:
     grains:
       roles:
         - varnish
+      varnish:
+        vcl: vcl.conf.kilo
+
+downloadcontent2b:
+  host: "downloadcontent2b.opensuse.org."
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        - varnish
+      varnish:
+        vcl: vcl.conf
 
 #leap151:
 #  host: leap151.zq1.de.

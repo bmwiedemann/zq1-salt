@@ -11,7 +11,7 @@ varnish-pkgs:
 
 /etc/varnish/vcl.conf:
   file.managed:
-    - source: salt://role/varnish/files/vcl.conf
+    - source: salt://role/varnish/files/{{ grains.varnish.vcl }}
     - group: varnish
     - mode: '0640'
 

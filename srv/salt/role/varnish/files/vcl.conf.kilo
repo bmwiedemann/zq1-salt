@@ -1,0 +1,177 @@
+#
+# This is Bernhard's config for the varnish caching proxy
+# 
+# See the VCL chapters in the Users Guide for a comprehensive documentation
+# at https://www.varnish-cache.org/docs/.
+
+# Marker to tell the VCL compiler that this VCL has been written with the
+# 4.0 or 4.1 syntax.
+vcl 4.1;
+
+import std;
+
+acl purge {
+    "localhost";
+    "127.0.0.1";
+    "::1";
+}
+
+# Default backend definition. Set this to point to your content server.
+backend default {
+    .host = "2001:67c:2178:8::27";
+    .port = "80";
+    #.host = "127.0.0.1";
+    #.port = "8080";
+    .probe = {
+        .request =
+            "HEAD /tumbleweed/repo/oss/media.1/products HTTP/1.1"
+            "Host: downloadcontent.opensuse.org"
+            "Connection: close"
+            "User-Agent: Varnish Health Probe";
+        .interval  = 10s;
+        .timeout   = 5s;
+        .window    = 5;
+        .threshold = 3;
+    }
+    .connect_timeout        = 4s;
+    .first_byte_timeout     = 30s;
+    .between_bytes_timeout  = 2s;
+}
+
+backend dc2b {
+    .host = "2a01:4f8:1c1c:e50d::1";
+    .port = "80";
+    #.host = "127.0.0.1";
+    #.port = "8080";
+    .probe = {
+        .request =
+            "HEAD /tumbleweed/repo/oss/media.1/products HTTP/1.1"
+            "Host: downloadcontent2.opensuse.org"
+            "Connection: close"
+            "User-Agent: Varnish Health Probe";
+        .interval  = 10s;
+        .timeout   = 5s;
+        .window    = 5;
+        .threshold = 3;
+    }
+    .connect_timeout        = 4s;
+    .first_byte_timeout     = 30s;
+    .between_bytes_timeout  = 2s;
+}
+
+backend vm12 { # for openQA test
+    .host = "vm12c6.zq1.de";
+    .port = "80";
+}
+
+    # "2a01:4f8:fff0:4a:5500::1"; # mirror.braun-software-solutions.de. misses tumbleweed
+backend localmirror {
+    .host = "2a01:4f8:221:b52:fcfd:ff:fe00:ec13"; # vm19c
+    #.host = "2a01:138:a004::202"; # rsync/widehat
+    .port = "80";
+}
+
+backend certbot {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+sub vcl_recv {
+    # Happens before we check if we have this in cache already.
+    #
+    # Typically you clean up the request here, removing cookies you don't need,
+    # rewriting the request, etc.
+    
+    if (req.url ~ "^/test.txt") {
+        set req.backend_hint = vm12;
+        return(pipe);
+    }
+    if (req.url ~ "^/\.well-known/acme-challenge/") {
+        set req.backend_hint = certbot;
+        return(pipe);
+    }
+    if (req.http.host ~ "pool\.ntp\.org$") {
+	# https://book.varnish-software.com/4.0/chapters/VCL_Subroutines.html
+        set req.http.location = "https://www.ntppool.org/";
+        return (synth(750, "Permanently moved"));
+    }
+
+    if (req.method == "PURGE") {
+        if (!client.ip ~ purge) {
+            return (synth(405, client.ip + " is not allowed to send PURGE requests."));
+        }
+        return (purge);
+    }
+    unset req.http.Cookie;
+    unset req.http.Authorization;
+
+    if (std.healthy(dc2b)) {
+        set req.backend_hint = dc2b;
+    }
+    if (std.healthy(req.backend_hint)) {
+        set req.grace = 10s;
+    }
+    if (req.restarts == 0) {
+        if (req.http.x-forwarded-for) {
+            set req.http.x-forwarded-for = regsub ( req.http.x-forwarded-for, ", ::1", "");
+            #set req.http.X-Forwarded-For = req.http.X-Forwarded-For;
+        } else {
+            set req.http.X-Forwarded-For = client.ip;
+        }
+        if (req.url ~ "/tumbleweed/.*\.rpm" && req.url !~ "/boot/") {
+            set req.backend_hint = localmirror;
+        }
+    }
+}
+
+sub vcl_synth {
+    if (resp.status == 750) {
+        set resp.http.location = req.http.location;
+        set resp.status = 301;
+        return (deliver);
+    }
+}
+
+sub vcl_backend_fetch {
+    if (bereq.retries > 0) { # if the local tumbleweed mirror failed, we fallback to the default backend
+        set bereq.backend = default;
+    }
+}
+
+sub vcl_backend_response {
+    # Happens after we have read the response headers from the backend.
+    #
+    # Here you clean the response headers, removing silly Set-Cookie headers
+    # and other mistakes your backend does.
+
+    # set cache timeout
+    
+    set beresp.ttl = 10s;
+    set beresp.grace = 6h; # ontop of ttl ; only used when backend is down (!healthy)
+    #set beresp.grace = 10m;
+    set beresp.keep = 4w;
+
+    if (bereq.backend == localmirror) {
+        if (beresp.status >= 300 && bereq.retries < 1) {
+            return(retry);
+        }
+        set beresp.keep = 5m;
+    }
+
+    If (bereq.url ~ "\.rpm$") {
+         set beresp.ttl = 5m;
+    }
+    #If (bereq.url ~ "\.iso$") {
+    #     set beresp.ttl = 1h;
+    #}
+    If (bereq.url ~ "/boot/") {
+         set beresp.ttl = 10s;
+    }
+}
+
+sub vcl_deliver {
+    # Happens when we have all the pieces we need, and are about to send the
+    # response to the client.
+    #
+    # You can do accounting or modifying the final object here.
+}
