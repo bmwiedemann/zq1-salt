@@ -39,6 +39,6 @@ haproxy:
     - source: salt://role/varnish/files/haproxy.cfg
   service.running:
     - enable: True
-    - restart: True
+    - reload: True
     - watch:
       - file: /etc/haproxy/haproxy.cfg
