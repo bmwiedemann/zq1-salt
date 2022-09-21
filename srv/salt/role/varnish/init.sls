@@ -24,6 +24,10 @@ varnish-service:
       - file: /etc/varnish/vcl.conf
       - file: /etc/sysconfig/varnish
 
+varnishlog:
+  service.running:
+    - enable: True
+
 # config from files/keepalived.conf needs adaptation for slave
 keepalived:
   service.running:
