@@ -8,6 +8,7 @@ varnish-pkgs:
 /etc/sysconfig/varnish:
   file.managed:
     - source: salt://role/varnish/files/varnish
+    - template: jinja
 
 /etc/varnish/vcl.conf:
   file.managed:

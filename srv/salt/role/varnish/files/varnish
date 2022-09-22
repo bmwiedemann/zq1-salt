@@ -12,7 +12,7 @@
 #
 # You might want to keep "/var/cache/varnish" when using the file backend.
 #
-VARNISHD_PARAMS="-j unix,user=varnish -f /etc/varnish/vcl.conf -T:6082 -s file,/var/cache/varnish,85G -a /var/lib/haproxy/varnish.sock,PROXY,user=varnish,group=varnish,mode=666 -a :8000,PROXY -p thread_pool_max=900"
+VARNISHD_PARAMS="-j unix,user=varnish -f /etc/varnish/vcl.conf -T:6082 -s file,/var/cache/varnish,{{pillar.varnish.cachesize}} -a /var/lib/haproxy/varnish.sock,PROXY,user=varnish,group=varnish,mode=666 -a :8000,PROXY -a :8008,HTTP -p thread_pool_max=900 -p timeout_idle=15"
 #VARNISHD_PARAMS="-j unix,user=varnish -f /etc/varnish/vcl.conf -T:6082 -s file,/var/cache/varnish,1M"
 
 ## Path:	Network/WWW/Varnishd

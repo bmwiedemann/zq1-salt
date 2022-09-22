@@ -1,5 +1,8 @@
 #!jinja|yaml|gpg
 
+varnish:
+  cachesize: 85G
+
 wireguard:
   interfaces:
     wg0:

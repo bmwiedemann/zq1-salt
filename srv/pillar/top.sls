@@ -1,6 +1,8 @@
 {% set roles = salt['grains.get']('roles', '') %}
 
 base:
+  '*':
+     - common
   '{{ grains.id }}':
     - id.{{ grains.id.replace('.', '_') }}
   {% for role in roles %}
@@ -8,7 +10,5 @@ base:
     - match: grain
     - role.{{ role }}
   {% endfor %}
-  '*':
-     - common
   'vm1?':
      - role.wireguard
