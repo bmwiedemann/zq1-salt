@@ -40,8 +40,10 @@ backend default {
 }
 
 backend dc2b {
-    .host = "2a01:4f8:1c1c:e50d::1";
-    .port = "80";
+    #.host = "2a01:4f8:1c1c:e50d::1";
+    #.port = "80";
+    .host = "fd4c:ab24:3f04::33";
+    .port = "8008";
     #.host = "127.0.0.1";
     #.port = "8080";
     .probe = {
@@ -119,7 +121,7 @@ sub vcl_recv {
         } else {
             set req.http.X-Forwarded-For = client.ip;
         }
-        if (req.url ~ "/tumbleweed/.*\.rpm" && req.url !~ "/boot/") {
+        if (req.url ~ "^/tumbleweed/.*\.rpm" && req.url !~ "/boot/") {
             set req.backend_hint = localmirror;
         }
     }
