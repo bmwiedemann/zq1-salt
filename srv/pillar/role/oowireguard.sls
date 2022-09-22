@@ -4,19 +4,19 @@
 {% load_yaml as wgclients %}
     downloadoo:
       ip: 2
-      pub: +sma6d7ZFG0MtgzqrFRi+7nkPItqeBjOw5dzgk4Z0w8= # download.o.o
+      pub: +sma6d7ZFG0MtgzqrFRi+7nkPItqeBjOw5dzgk4Z0w8=
       Endpoint: downloadcontent.opensuse.org.
     downloadcontent2b:
       ip: 33
-      pub: su1YIVPBAHWbsRTFjVSqTTRVJFlqAidwwMzSC1eDUBE= # downloadcontent2b.o.o
+      pub: su1YIVPBAHWbsRTFjVSqTTRVJFlqAidwwMzSC1eDUBE=
       Endpoint: downloadcontent2b.opensuse.org.
     vm15c:
       ip: 15
-      pub: ur5rTKztaOoztOT3iSyTTQKZqpu7LfZEqRnwpD5UgD0= # vm15c.zq1.de
+      pub: ur5rTKztaOoztOT3iSyTTQKZqpu7LfZEqRnwpD5UgD0=
       Endpoint: vm15c6.zq1.de.
     vm16c:
       ip: 16
-      pub: jFkLcrgxo+WXSA2/aLInzSdbGvdRbUcLtzXtrAyD2z8= # vm16c.zq1.de
+      pub: jFkLcrgxo+WXSA2/aLInzSdbGvdRbUcLtzXtrAyD2z8=
       Endpoint: vm16c6.zq1.de.
 {% endload %}
 
@@ -37,6 +37,8 @@ wireguard:
 {% if id != grains.id %}
         - PublicKey: {{wgclients[id].pub}}
           AllowedIPs: {{ipv6net~wgclients[id].ip}}
+          {% if "Endpoint" in wgclients[id] %}
           Endpoint: {{wgclients[id].Endpoint}}:{{port}}
+          {% endif %}
 {% endif %}
 {% endfor %}
