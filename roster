@@ -36,6 +36,7 @@ vm15c:
     grains:
       roles:
         - varnish
+        - oowireguard
       varnish:
         vcl: vcl.conf.kilo
 vm16c:
@@ -44,6 +45,7 @@ vm16c:
     grains:
       roles:
         - varnish
+        - oowireguard
       varnish:
         vcl: vcl.conf.kilo
 
@@ -54,6 +56,7 @@ downloadcontent2b:
     grains:
       roles:
         - varnish
+        - oowireguard
       varnish:
         vcl: vcl.conf
 
