@@ -60,6 +60,14 @@ downloadcontent2b:
       varnish:
         vcl: vcl.conf
 
+downloadcontent-us1:
+  host: "downloadcontent-us1.opensuse.org."
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        - varnish
+
 #leap151:
 #  host: leap151.zq1.de.
 #  port: 23
