@@ -113,8 +113,8 @@ wireguard:
           Endpoint: lenovo26.zq1.de.:123
           AllowedIPs: 10.8.5.115, fd4b:ab24:3f04:8c::115
         # bernhard.suse.de
-        - PublicKey: bSjD+Lx4jYVsGHsMWXn8PKKNdHb4EIP1M/arqvKZBWk=
-          AllowedIPs: 10.8.5.191, fd4b:ab24:3f04:8c::191, 10.160.4.191, 2620:113:80c0:8080:10:160:4:191
+        #- PublicKey: bSjD+Lx4jYVsGHsMWXn8PKKNdHb4EIP1M/arqvKZBWk=
+        #  AllowedIPs: 10.8.5.191, fd4b:ab24:3f04:8c::191, 10.160.4.191, 2620:113:80c0:8080:10:160:4:191
         # bernhards.cloud.suse.de
         - PublicKey: LO/zr4ZT55dq7vxBaBW+afoh776k8vDvBHvDkbNmHGc=
           AllowedIPs: 10.8.5.192, fd4b:ab24:3f04:8c::192, 10.162.191.176, 2620:113:80c0:8130:ec4:7aff:fe57:1808, 2620:113:80c0::/48, 10.8.5.190, fd4b:ab24:3f04:8c::190, 10.160.0.0/13, 10.100.0.0/13, 10.84.0.0/14, 10.67.0.0/16, 10.156.0.0/16, 149.44.0.0/17, 149.44.128.0/17
