@@ -11,6 +11,7 @@ fileserver_backend:
 file_roots:
   base:
     - ./srv/salt
+    - formulas/keepalived-formula/
     - formulas/ntp-formula/
     - formulas/nrpe-formula/
     - formulas/wireguard-formula/
