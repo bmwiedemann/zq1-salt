@@ -1,0 +1,51 @@
+#!/usr/bin/perl -w
+# Script to produce wg mesh salt config
+# written in 2022 by Bernhard M. Wiedemann
+
+use strict;
+use Getopt::Long;
+use IPC::Open2;
+
+my %options = qw(
+endpoint  FIXME.opensuse.org.
+wg        wg0
+);
+my @options = qw(
+        ip=i
+        endpoint=s
+        wg=s
+        id=s
+);
+if(!GetOptions(\%options, @options)) {die "invalid option. @ARGV\n"}
+
+if(!$options{ip}) { $options{ip} = int(rand(10000)) }
+my $id = $options{id};
+if(!$id) { $id = $options{endpoint}; $id=~s/[^A-Za-z0-9]//g; }
+my $priv = `wg genkey`;
+my $pid = open2(\*CHLD_OUT, \*CHLD_IN, 'wg', 'pubkey');
+print CHLD_IN $priv; close CHLD_IN;
+my $pub = <CHLD_OUT>; chomp($pub); #`echo $priv | wg pubkey`;
+close(CHLD_OUT); waitpid( $pid, 0 );
+$pid = open2(\*CHLD_OUT, \*CHLD_IN, qw(gpg -e -a -r 64E0ABD012D7C6DF6347A6B549360B3B1DFBA164));
+print CHLD_IN $priv; close CHLD_IN;
+$/=undef;
+my $privcrypt = <CHLD_OUT>;#`echo $priv | gpg -e -a -r 64E0ABD012D7C6DF6347A6B549360B3B1DFBA164`;
+close(CHLD_OUT); waitpid( $pid, 0 );
+# indent
+$privcrypt =~s/^/          /mg;
+
+print
+"# this part goes into public wireguard pillar:
+    $id:
+      ip: $options{ip}
+      pub: $pub
+      Endpoint: $options{endpoint}
+
+#!jinja|yaml|gpg
+wireguard:
+  interfaces:
+    $options{wg}:
+      config:
+        PrivateKey: |
+$privcrypt
+";
