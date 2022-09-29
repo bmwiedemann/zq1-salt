@@ -80,12 +80,8 @@ downloadcontent-us1:
 openrd2:
          host: openrd2.zq1.de.
          port: 23
-juliet:
-         host: juliet.zq1.de.
-         user: root
-         port: 23
-hotel:
-         host: hotel.zq1.de.
-         user: root
-         port: 23
+#juliet:
+#         host: juliet.zq1.de.
+#         user: root
+#         port: 23
 suse1:   suse1.zq1.de.
