@@ -66,7 +66,8 @@ downloadcontent-us1:
   minion_opts:
     grains:
       roles:
-        - varnish
+        #- varnish
+        - oowireguard
 
 #leap151:
 #  host: leap151.zq1.de.

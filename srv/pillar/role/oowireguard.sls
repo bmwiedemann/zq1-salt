@@ -10,6 +10,10 @@
       ip: 33
       pub: su1YIVPBAHWbsRTFjVSqTTRVJFlqAidwwMzSC1eDUBE=
       Endpoint: downloadcontent2b.opensuse.org.
+    downloadcontent-us1:
+      ip: 41
+      pub: XSscE5bEzfNFHR0o7VGgg6uuaFtD7FlTgI1iSu1s/1g=
+      Endpoint: downloadcontent-us1.opensuse.org.
     vm15c:
       ip: 15
       pub: ur5rTKztaOoztOT3iSyTTQKZqpu7LfZEqRnwpD5UgD0=
