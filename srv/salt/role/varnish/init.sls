@@ -47,3 +47,7 @@ haproxy:
     - reload: True
     - watch:
       - file: /etc/haproxy/haproxy.cfg
+
+logrotate.timer:
+  service.running:
+    - enable: True
