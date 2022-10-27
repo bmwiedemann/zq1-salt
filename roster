@@ -69,6 +69,14 @@ downloadcontent-us1:
         #- varnish
         - oowireguard
 
+downloadcontent-br:
+  host: "downloadcontent-br.opensuse.org."
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        - oowireguard
+
 stage3:
   host: "stage3.opensuse.org."
   user: root

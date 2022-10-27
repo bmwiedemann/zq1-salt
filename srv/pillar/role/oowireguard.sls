@@ -14,6 +14,10 @@
       ip: 41
       pub: XSscE5bEzfNFHR0o7VGgg6uuaFtD7FlTgI1iSu1s/1g=
       Endpoint: downloadcontent-us1.opensuse.org.
+    downloadcontent-br:
+      ip: 51
+      pub: q/kUNNFvyDBa8w9do9Bi+HRAjA5Wy6hLR1nbJp34uXk=
+      Endpoint: downloadcontent-br.opensuse.org
     stage3:
       ip: 203
       pub: mSZtYnBHJk+WVxH6XV/J7QJ5Bq2iUYDIjFG1UZdFVlM=
