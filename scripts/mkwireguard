@@ -1,6 +1,10 @@
 #!/usr/bin/perl -w
 # Script to produce wg mesh salt config
 # written in 2022 by Bernhard M. Wiedemann
+# 
+# usage: scripts/mkwireguard --ip=123 --id=NAMEFROMROSTER --endpoint=DNSNAME.opensuse.org > srv/pillar/id/NAMEFROMROSTER.sls
+# e.g. scripts/mkwireguard --ip=51 --id=downloadcontent-br --endpoint=downloadcontent-br.opensuse.org > srv/pillar/id/downloadcontent-br.sls
+# then cut and paste the pubkey part into srv/pillar/role/oowireguard.sls
 
 use strict;
 use Getopt::Long;
