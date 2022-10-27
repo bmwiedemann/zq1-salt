@@ -57,6 +57,7 @@ downloadcontent2b:
       roles:
         - varnish
         - oowireguard
+        - munin-node
       varnish:
         vcl: vcl.conf
 
@@ -68,6 +69,7 @@ downloadcontent-us1:
       roles:
         #- varnish
         - oowireguard
+        - munin-node
 
 downloadcontent-br:
   host: "downloadcontent-br.opensuse.org."
@@ -76,6 +78,7 @@ downloadcontent-br:
     grains:
       roles:
         - oowireguard
+        - munin-node
 
 stage3:
   host: "stage3.opensuse.org."
