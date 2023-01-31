@@ -55,11 +55,19 @@ downloadcontent2b:
   minion_opts:
     grains:
       roles:
-        - varnish
+        - nginxcache
         - oowireguard
         - munin-node
-      varnish:
-        vcl: vcl.conf
+
+downloadcontent2c:
+  host: "downloadcontent2c.opensuse.org."
+  user: root
+  minion_opts:
+    grains:
+      roles:
+        #- nginxcache
+        - oowireguard
+        - munin-node
 
 downloadcontent-us1:
   host: "downloadcontent-us1.opensuse.org."
@@ -77,6 +85,7 @@ downloadcontent-br:
   minion_opts:
     grains:
       roles:
+        - nginxcache
         - oowireguard
         - munin-node
 
@@ -87,6 +96,18 @@ stage3:
     grains:
       roles:
         - oowireguard
+
+oomirror-br:
+  host: mirror-br.opensuse.org.
+
+oomirrorcache-br:
+  host: mirrorcache-br.opensuse.org.
+
+oomirrorcache-br-2:
+  host: mirrorcache-br-2.opensuse.org.
+
+oomirrorcache-us:
+  host: mirrorcache-us.infra.opensuse.org.
 
 #leap151:
 #  host: leap151.zq1.de.
