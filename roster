@@ -106,6 +106,20 @@ stage3:
       roles:
         - oowireguard
 
+stonehat:
+  host: stonehat.opensuse.org.
+  minion_opts:
+    grains:
+      roles:
+        - oowireguard
+
+slimhat:
+  host: slimhat.opensuse.org.
+  minion_opts:
+    grains:
+      roles:
+        - oowireguard
+
 oomirror-br:
   host: mirror-br.opensuse.org.
 

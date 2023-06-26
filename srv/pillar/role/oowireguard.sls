@@ -26,6 +26,14 @@
       ip: 203
       pub: mSZtYnBHJk+WVxH6XV/J7QJ5Bq2iUYDIjFG1UZdFVlM=
       Endpoint: stage3.opensuse.org.
+    stonehat:
+      ip: 210
+      pub: 4IeErBttEZMxbjIQHPpt656s6JC8ZDjgxavv8GJnAzc=
+      Endpoint: stonehat.opensuse.org.
+    slimhat:
+      ip: 211
+      pub: dD0tP6xlNoi5IcKNP9VMJzC0W/wv/kDC3TJwrIxVTQw=
+      Endpoint: slimhat.opensuse.org.
     vm15c:
       ip: 15
       pub: ur5rTKztaOoztOT3iSyTTQKZqpu7LfZEqRnwpD5UgD0=
