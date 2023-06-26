@@ -89,6 +89,13 @@ downloadcontent-br:
         - oowireguard
         - munin-node
 
+rsync:
+  host: rsync.infra.opensuse.org.
+  minion_opts:
+    grains:
+      roles:
+        - oowireguard
+
 stage3:
   host: "stage3.opensuse.org."
   user: root
