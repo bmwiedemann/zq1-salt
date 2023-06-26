@@ -16,3 +16,13 @@ munin-node-service:
     - restart: True
     - watch:
       - file: /etc/munin/munin-node.conf
+
+/etc/firewalld/zones/internal.xml:
+ file.managed:
+   - contents: |
+       <?xml version="1.0" encoding="utf-8"?>
+       <zone target="ACCEPT">
+         <short>Internal</short>
+         <description>Internal trusted network</description>
+         <interface name="wg0"/>
+       </zone>

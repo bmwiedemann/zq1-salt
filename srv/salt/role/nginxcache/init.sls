@@ -18,5 +18,6 @@ nginx-service:
 /etc/nginx/vhosts.d:
   file.recurse:
     - source: salt://role/nginxcache/files/vhosts.d/
+    - template: jinja
     - watch_in:
       service: nginx-service

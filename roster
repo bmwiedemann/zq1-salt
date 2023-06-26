@@ -16,6 +16,8 @@ vm4c:
     grains:
       roles:
         - mailserver
+vm5c:
+  host: vm5c.zq1.de.
 vm2a:
   host: vm2a.zq1.de.
   user: root
