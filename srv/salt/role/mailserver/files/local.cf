@@ -41,7 +41,7 @@ header   BMW_TO_paypal ALL =~ /(paypal[24]?\@lsmod\.de)|(bernhardpgp\@lsmod\.de)
 describe BMW_TO_paypal Mail to outdated addr
 score    BMW_TO_paypal 3.0
 
-header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|(githubbmw\@lsmod\.de)|(pythonbugs\@zq1\.de)|(debianbugs\@zq1\.de)|(gnomebmw\@lsmod\.de)|svltt-kontakt/
+header   BMW_TO_spammed ALL =~ /(bernhard\@lsmod\.de)|(schattenfell\@silberwellensee\.de)|(kathleen\@silberwellensee\.de)|(b\.m\.w\@gmx\.net)|(wiedeman\@silberwellensee\.de)|(githubbmw\@lsmod\.de)|(pythonbugs\@zq1\.de)|(debianbugs\@zq1\.de)|(gnomebmw\@lsmod\.de)|(bitcardbmw\@lsmod\.de)|svltt-kontakt/
 describe BMW_TO_spammed Mail to spammed addr
 score    BMW_TO_spammed 1.9
 
@@ -59,6 +59,7 @@ score URIBL_GREY        (0.3)
 score URIBL_RED         (0.5)
 score HTML_FONT_LOW_CONTRAST        (0.5)
 
+score DKIMWL_WL_MED (-1.0)
 score SPF_CHECK_PASS (-1.0)
 score SPF_HELO_FAIL 2.0 # up from 0.0
 score SPF_HELO_NONE 1.0 # up from 0.0
@@ -74,6 +75,7 @@ score FREEMAIL_FORGED_REPLYTO (0.5)
 score FREEMAIL_REPLYTO_END_DIGIT (0.5)
 score HTML_SHORT_LINK_IMG_1 (1.0)
 score HTML_IMAGE_RATIO_02 (1.0)
+score HTML_IMAGE_ONLY_32 (1.8)
 score T_TVD_MIME_EPI (0.5)
-
 score MAILING_LIST_MULTI 0.0 # up from -1.0
+score FROM_WSP_TRAIL 1.0 # down from 2.5 - because of blau.de
