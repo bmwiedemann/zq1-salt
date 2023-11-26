@@ -2,18 +2,10 @@
 {% set ipv6net = 'fd4c:ab24:3f04::' %}
 {% set port = 51123 %}
 {% load_yaml as wgclients %}
-    downloadoo:
-      ip: 2
-      pub: +sma6d7ZFG0MtgzqrFRi+7nkPItqeBjOw5dzgk4Z0w8=
-      Endpoint: downloadcontent.opensuse.org.
     downloadcontent2b:
       ip: 33
       pub: su1YIVPBAHWbsRTFjVSqTTRVJFlqAidwwMzSC1eDUBE=
       Endpoint: downloadcontent2b.opensuse.org.
-    downloadcontent-us1:
-      ip: 41
-      pub: XSscE5bEzfNFHR0o7VGgg6uuaFtD7FlTgI1iSu1s/1g=
-      Endpoint: downloadcontent-us1.opensuse.org.
     downloadcontent-br:
       ip: 51
       pub: q/kUNNFvyDBa8w9do9Bi+HRAjA5Wy6hLR1nbJp34uXk=
