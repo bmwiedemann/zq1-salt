@@ -1,15 +1,12 @@
-adrilap: adrilap.zq1.de.
 lenovo2: lenovo2.zq1.de.
 black:   black.zq1.de.
 deskmini: deskmini.zq1.de.
-nuc:     nucw.zq1.de.
-salt:    salt.zq1.de.
-vm1a:    vm1a.zq1.de.
+nuc:     nuc.zq1.de.
 vm1c:    vm1c.zq1.de.
 vm11:    vm11.zq1.de.
 vm12:    vm12.zq1.de.
-vm13:    vm17a.zq1.de.
-vm3:     vm3a.zq1.de.
+vm13:    vm17c.zq1.de.
+vm3:     vm3c.zq1.de.
 vm4c:
   host: vm4c.zq1.de.
   minion_opts:
@@ -18,13 +15,6 @@ vm4c:
         - mailserver
 vm5c:
   host: vm5c.zq1.de.
-vm2a:
-  host: vm2a.zq1.de.
-  user: root
-  minion_opts:
-    grains:
-      roles:
-        - dnsserver
 vm2c:
   host: vm2c.zq1.de.
   user: root
@@ -130,9 +120,6 @@ oomirrorcache-us:
 #      roles:
 #        - vpnserver
 
-openrd2:
-         host: openrd2.zq1.de.
-         port: 23
 #juliet:
 #         host: juliet.zq1.de.
 #         user: root
