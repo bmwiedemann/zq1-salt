@@ -71,16 +71,6 @@ downloadcontent2c:
         - oowireguard
         - munin-node
 
-downloadcontent-us1:
-  host: "downloadcontent-us1.opensuse.org."
-  user: root
-  minion_opts:
-    grains:
-      roles:
-        #- varnish
-        - oowireguard
-        - munin-node
-
 downloadcontent-br:
   host: "downloadcontent-br.opensuse.org."
   user: root
