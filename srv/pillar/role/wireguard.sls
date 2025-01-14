@@ -6,6 +6,9 @@
     20:  ZUlfd2Cpf6KmIh0a650WtKpphezkfisYiwhKH0rlkDI= # adrian.zq1.de
     32:  mSySF05fpMU1Rk0rfjVoq+xw4H4c97sKW7Y1nGEk3nc= # black.zq1.de
     41:  c9rZUdkl+r6FNKtCX2i8W48zb9N+RtRSWI1+nzu5ahw= # nuc.zq1.de
+    114: hTJgV70BUmYUZwxBv6cE3jBWrQ/kMWjCEEwpmq8sBnM= # lenovo.zq1.de
+    #115:fWxDFQ7S37OO1ajB9arXlqEm2gVo1MgdpI5tsqUKZFU= # Bernhard lenovo2 defined below
+    116: +21GTA/oVKsZgamVIb5kDXQctWCRcqeMrFmuX5qEe1w= # Bernhard chromebook2
     130: IicsuLKp8iTH4cMXsP4IIC+DMqsIP7daU5FJE1ZLxAU= # papa laptop
     140: Mu2c6VX9fVBp5QAInjX9tmBSyMYI6GEDOZv2Y5mwoyA= # sven laptop
     141: f0TIBPCZ+ovHZXJwYmI0tiMjJFTCIIu6SbD38V+6bXw= # sven pi
@@ -13,6 +16,7 @@
     151: pzk7XxkEL5rt7Xm8dbeiX07kCQ7BBVFupWP8Q/wydww= # android2 Bernhard moto5
     178: sWEcz3jMk2KT+gO1MnOIzL93RrFbfHxb9iwBnORl/Dk= # homeffo.zq1.de:56224
     191: bSjD+Lx4jYVsGHsMWXn8PKKNdHb4EIP1M/arqvKZBWk= # bernhard.suse.de (2010)
+    #192:LO/zr4ZT55dq7vxBaBW+afoh776k8vDvBHvDkbNmHGc= # bernhards.cloud.suse.de - disabled for corporate security
 {% endload %}
 
 wireguard:
