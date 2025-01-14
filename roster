@@ -4,7 +4,9 @@ deskmini: deskmini.zq1.de.
 nuc:     nuc.zq1.de.
 vm1c:    vm1c.zq1.de.
 vm11:    vm11.zq1.de.
-vm12:    vm12.zq1.de.
+vm12:
+  host:  vm12.zq1.de.
+  port:  23
 vm13:    vm17c.zq1.de.
 vm3:     vm3c.zq1.de.
 vm4c:
