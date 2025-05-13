@@ -14,6 +14,7 @@
     141: f0TIBPCZ+ovHZXJwYmI0tiMjJFTCIIu6SbD38V+6bXw= # sven pi
     150: dMBuQM5HRCSCXubmMt/l8HeoDeSQcXyvMaNYciUS8wY= # android1 Bernhard nokia
     151: pzk7XxkEL5rt7Xm8dbeiX07kCQ7BBVFupWP8Q/wydww= # android2 Bernhard moto5
+    152: YcNF66GVoOy9O6FDVbiaDp8T6oqS42vyPvrKysorKmE= # android3 Bernhard pixel6a
     178: sWEcz3jMk2KT+gO1MnOIzL93RrFbfHxb9iwBnORl/Dk= # homeffo.zq1.de:56224
     191: bSjD+Lx4jYVsGHsMWXn8PKKNdHb4EIP1M/arqvKZBWk= # bernhard.suse.de (2010)
     #192:LO/zr4ZT55dq7vxBaBW+afoh776k8vDvBHvDkbNmHGc= # bernhards.cloud.suse.de - disabled for corporate security
