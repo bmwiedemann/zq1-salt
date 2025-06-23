@@ -6,6 +6,7 @@
     20:  ZUlfd2Cpf6KmIh0a650WtKpphezkfisYiwhKH0rlkDI= # adrian.zq1.de
     32:  mSySF05fpMU1Rk0rfjVoq+xw4H4c97sKW7Y1nGEk3nc= # black.zq1.de
     41:  c9rZUdkl+r6FNKtCX2i8W48zb9N+RtRSWI1+nzu5ahw= # nuc.zq1.de
+    60:  oT0h9ysxeVa8NukoxvPZH+Ms6vdOGENt9EUhE+4Bhig= # deskmini600.zq1.de
     114: hTJgV70BUmYUZwxBv6cE3jBWrQ/kMWjCEEwpmq8sBnM= # lenovo.zq1.de
     #115:fWxDFQ7S37OO1ajB9arXlqEm2gVo1MgdpI5tsqUKZFU= # Bernhard lenovo2 defined below
     116: +21GTA/oVKsZgamVIb5kDXQctWCRcqeMrFmuX5qEe1w= # Bernhard chromebook2
